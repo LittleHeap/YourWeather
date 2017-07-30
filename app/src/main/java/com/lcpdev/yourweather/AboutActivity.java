@@ -15,9 +15,11 @@ import android.widget.Toast;
 
 /**
  * Created by LCP on 2017/2/4.
+ *
  * @ Email:chuge94@163.com
  * GitHub:https://github.com/linchupeng/YourWeather
  */
+
 /**
  *Navigation功能之设置界面及功能的实现
  */
@@ -27,6 +29,7 @@ public class AboutActivity extends BaseActivity {
     private Button btn_shared;
     private Button btn_friends;
     private Button btn_update;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,20 +54,21 @@ public class AboutActivity extends BaseActivity {
     }
 
     private void initView() {
-        btn_code= (Button) findViewById(R.id.btn_code);
-        btn_friends= (Button) findViewById(R.id.btn_friends);
-        btn_shared= (Button) findViewById(R.id.btn_share);
-        btn_update= (Button) findViewById(R.id.btn_bullshit);
+        btn_code = (Button) findViewById(R.id.btn_code);
+        btn_friends = (Button) findViewById(R.id.btn_friends);
+        btn_shared = (Button) findViewById(R.id.btn_share);
+        btn_update = (Button) findViewById(R.id.btn_bullshit);
         btn_update.setOnClickListener(new BtnListener());
         btn_shared.setOnClickListener(new BtnListener());
         btn_friends.setOnClickListener(new BtnListener());
         btn_code.setOnClickListener(new BtnListener());
     }
-    class BtnListener implements View.OnClickListener{
+
+    class BtnListener implements View.OnClickListener {
 
         @Override
         public void onClick(View view) {
-            switch (view.getId()){
+            switch (view.getId()) {
                 //查看项目源代码
                 case R.id.btn_code:
                     goToHtml("https://github.com/linchupeng/YourWeather");
@@ -73,8 +77,9 @@ public class AboutActivity extends BaseActivity {
                 case R.id.btn_share:
                     Intent shareIntent = new Intent(Intent.ACTION_SEND);
                     shareIntent.setType("text/plain");
-                    shareIntent.putExtra(Intent.EXTRA_SUBJECT, "Subject Here");;
-                    startActivity(Intent.createChooser(shareIntent,"分享到"));
+                    shareIntent.putExtra(Intent.EXTRA_SUBJECT, "Subject Here");
+                    ;
+                    startActivity(Intent.createChooser(shareIntent, "分享到"));
                     break;
 
             }

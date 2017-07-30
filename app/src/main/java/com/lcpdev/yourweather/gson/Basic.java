@@ -5,6 +5,7 @@ import com.google.gson.annotations.SerializedName;
 
 /**
  * Created by LCP on 2017/1/24.
+ *
  * @ Email:chuge94@163.com
  * GitHub:https://github.com/linchupeng/YourWeather
  */

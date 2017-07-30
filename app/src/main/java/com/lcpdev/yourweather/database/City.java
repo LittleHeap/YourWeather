@@ -5,6 +5,7 @@ import org.litepal.crud.DataSupport;
 
 /**
  * Created by LCP on 2017/1/16.
+ *
  * @ Email:chuge94@163.com
  * GitHub:https://github.com/linchupeng/YourWeather
  */

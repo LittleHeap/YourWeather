@@ -25,58 +25,58 @@ public class LogUtils {
     public static final int LEVEL = NOTHING;
 
     // 调用Log.v()方法打印日志
-    public static void v(String tag, String msg){
-        if(LEVEL <= VERBOSE){
+    public static void v(String tag, String msg) {
+        if (LEVEL <= VERBOSE) {
             /**
              * 加了一个日志信息值的判断，为了防止参数msg的值为null情况的出现
              */
-            if(msg != null){
+            if (msg != null) {
                 Log.v(tag, msg);
-            }else {
+            } else {
                 Log.v(tag, "is NULL");
             }
         }
     }
 
     // 调用Log.d()方法打印日志
-    public static void d(String tag, String msg){
-        if(LEVEL <= VERBOSE){
-            if(msg != null){
+    public static void d(String tag, String msg) {
+        if (LEVEL <= VERBOSE) {
+            if (msg != null) {
                 Log.d(tag, msg);
-            }else {
+            } else {
                 Log.d(tag, "is NULL");
             }
         }
     }
 
     // 调用Log.i()方法打印日志
-    public static void i(String tag, String msg){
-        if(LEVEL <= VERBOSE){
-            if(msg != null){
+    public static void i(String tag, String msg) {
+        if (LEVEL <= VERBOSE) {
+            if (msg != null) {
                 Log.i(tag, msg);
-            }else {
+            } else {
                 Log.i(tag, "is NULL");
             }
         }
     }
 
     // 调用Log.w()方法打印日志
-    public static void w(String tag, String msg){
-        if(LEVEL <= VERBOSE){
-            if(msg != null){
+    public static void w(String tag, String msg) {
+        if (LEVEL <= VERBOSE) {
+            if (msg != null) {
                 Log.w(tag, msg);
-            }else {
+            } else {
                 Log.w(tag, "is NULL");
             }
         }
     }
 
     // 调用Log.e()方法打印日志
-    public static void e(String tag, String msg){
-        if(LEVEL <= VERBOSE){
-            if(msg != null){
+    public static void e(String tag, String msg) {
+        if (LEVEL <= VERBOSE) {
+            if (msg != null) {
                 Log.e(tag, msg);
-            }else {
+            } else {
                 Log.e(tag, "is NULL");
             }
         }

@@ -7,9 +7,9 @@ import com.google.gson.annotations.SerializedName;
  * github:https://github.com/linchupeng/YourWeather
  */
 
-	/**
-	 * 未来小时的天气信息
-	 */
+/**
+ * 未来小时的天气信息
+ */
 public class HourForecast {
     public String date;
     public String hum;

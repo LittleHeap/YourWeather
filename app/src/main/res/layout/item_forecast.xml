@@ -10,54 +10,60 @@
     android:paddingEnd="10dp"
     android:paddingStart="16dp"
     android:paddingTop="16dp">
+
     <ImageView
         android:layout_width="22dp"
         android:layout_height="22dp"
-        android:src="@mipmap/week"/>
+        android:src="@mipmap/week" />
+
     <TextView
         android:id="@+id/date_Text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:paddingLeft="10dp"
-        tools:text="星期一"
-        />
+        tools:text="星期一" />
+
     <ImageView
         android:id="@+id/foreDayWeather"
         android:layout_width="24dp"
         android:layout_height="24dp"
-        android:src="@mipmap/default_weathericon"/>
+        android:src="@mipmap/default_weathericon" />
+
     <TextView
         android:id="@+id/info_Text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:paddingLeft="10dp"
-        tools:text="多云"/>
+        tools:text="多云" />
 
     <ImageView
         android:layout_width="22dp"
         android:layout_height="22dp"
-        android:src="@mipmap/tmpdown"/>
+        android:src="@mipmap/tmpdown" />
+
     <TextView
         android:id="@+id/min_Text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:paddingLeft="10dp"
-        tools:text="5"/>
+        tools:text="5" />
+
     <ImageView
         android:layout_width="22dp"
         android:layout_height="22dp"
-        android:src="@mipmap/tmpup"/>
+        android:src="@mipmap/tmpup" />
+
     <TextView
         android:id="@+id/max_Text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:paddingLeft="10dp"
-        tools:text="20"/>
- </LinearLayout>
+        tools:text="20" />
+</LinearLayout>
 
 
 

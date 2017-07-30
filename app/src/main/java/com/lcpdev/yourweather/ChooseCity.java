@@ -37,6 +37,7 @@ import okhttp3.Response;
 
 /**
  * Created by LCP on 2017/1/20.
+ *
  * @ Email:chuge94@163.com
  * GitHub:https://github.com/linchupeng/YourWeather
  */
@@ -45,7 +46,7 @@ public class ChooseCity extends BaseActivity {
     public static final int LEVEL_PROVINCE = 0;
     public static final int LEVEL_CITY = 1;
     public static final int LEVEL_COUNTY = 2;
-//    private TextView titleText;
+    //    private TextView titleText;
     private ProgressDialog progressDialog;
     private List<String> dataList = new ArrayList<>();
     private CityAdapter mCityAdapter;
@@ -72,31 +73,31 @@ public class ChooseCity extends BaseActivity {
         setContentView(R.layout.choose_city);
         initView();
         initToolbar();
-        Log.d("LifeCycle","ChooseActivity_onCreate");
+        Log.d("LifeCycle", "ChooseActivity_onCreate");
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        Log.d("LifeCycle","ChooseActivity_onStart");
+        Log.d("LifeCycle", "ChooseActivity_onStart");
     }
 
     @Override
     protected void onResume() {
         super.onPostResume();
-        Log.d("LifeCycle","ChooseActivity_onResume");
+        Log.d("LifeCycle", "ChooseActivity_onResume");
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        Log.d("LifeCycle","ChooseActivity_onPause");
+        Log.d("LifeCycle", "ChooseActivity_onPause");
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        Log.d("LifeCycle","ChooseActivity_onStop");
+        Log.d("LifeCycle", "ChooseActivity_onStop");
     }
 
     @Override
@@ -107,17 +108,16 @@ public class ChooseCity extends BaseActivity {
     private void initToolbar() {
         toolbarTitle = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbarTitle);
-        if (getSupportActionBar()!=null){
+        if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
 
         toolbarTitle.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (currentLeveL ==LEVEL_PROVINCE){
+                if (currentLeveL == LEVEL_PROVINCE) {
                     finish();
-                }
-                else if (currentLeveL == LEVEL_COUNTY) {
+                } else if (currentLeveL == LEVEL_COUNTY) {
                     queryCity();
                 } else if (currentLeveL == LEVEL_CITY) {
                     queryProvince();
@@ -126,6 +126,7 @@ public class ChooseCity extends BaseActivity {
         });
         queryProvince();
     }
+
     private void initView() {
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
@@ -143,10 +144,10 @@ public class ChooseCity extends BaseActivity {
                 } else if (currentLeveL == LEVEL_CITY) {
                     selectedCity = cityList.get(position);
                     queryCounty();
-                }else if (currentLeveL == LEVEL_COUNTY){
+                } else if (currentLeveL == LEVEL_COUNTY) {
                     String weatherId = countyList.get(position).getWeatherId();
-                    Intent intent =new Intent(ChooseCity.this,MainActivity.class);
-                    intent.putExtra("weather_id",weatherId);
+                    Intent intent = new Intent(ChooseCity.this, MainActivity.class);
+                    intent.putExtra("weather_id", weatherId);
                     startActivity(intent);
                     finish();
                 }
@@ -155,6 +156,7 @@ public class ChooseCity extends BaseActivity {
 
 //        queryProvince();
     }
+
     /**
      * 查询省份
      */
@@ -173,6 +175,7 @@ public class ChooseCity extends BaseActivity {
             queryFromServer(address, "province");
         }
     }
+
     /**
      * 查询城市
      */
@@ -192,7 +195,9 @@ public class ChooseCity extends BaseActivity {
             String address = "http://guolin.tech/api/china/" + provinceCode;
             queryFromServer(address, "city");
         }
-    } /**
+    }
+
+    /**
      * 查询县城
      */
     private void queryCounty() {
@@ -212,13 +217,14 @@ public class ChooseCity extends BaseActivity {
             Log.d("TAG", String.valueOf(cityCode));
             String address = "http://guolin.tech/api/china/" + provinceCode + "/" + cityCode;
             queryFromServer(address, "county");
-            Log.d("queryCounty",address);
+            Log.d("queryCounty", address);
 
         }
     }
+
     /**
      * 在queryFromServer()方法中调用了HTTPsendOkHttpRequest()方法向服务器请求数据
-     * 相应的数据会回调到onResponse()方法中 
+     * 相应的数据会回调到onResponse()方法中
      */
     private void queryFromServer(String address, final String type) {
         showProgressDialog();
@@ -265,6 +271,7 @@ public class ChooseCity extends BaseActivity {
             }
         });
     }
+
     private void showProgressDialog() {
         if (progressDialog == null) {
             progressDialog = new ProgressDialog(ChooseCity.this);
@@ -282,10 +289,9 @@ public class ChooseCity extends BaseActivity {
 
     @Override
     public void onBackPressed() {
-        if (currentLeveL ==LEVEL_PROVINCE){
+        if (currentLeveL == LEVEL_PROVINCE) {
             finish();
-        }
-        else if (currentLeveL == LEVEL_COUNTY) {
+        } else if (currentLeveL == LEVEL_COUNTY) {
             queryCity();
         } else if (currentLeveL == LEVEL_CITY) {
             queryProvince();
@@ -295,7 +301,7 @@ public class ChooseCity extends BaseActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Log.d("LifeCycle","ChooseActivity_onDestroy");
+        Log.d("LifeCycle", "ChooseActivity_onDestroy");
     }
 }
 

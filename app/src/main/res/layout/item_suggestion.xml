@@ -9,6 +9,7 @@
     android:foreground="?android:attr/selectableItemBackground"
     card_view:cardCornerRadius="3dp"
     card_view:cardElevation="2dp">
+
     <LinearLayout
         android:paddingStart="32dp"
         android:paddingEnd="10dp"
@@ -17,14 +18,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
             <ImageView
                 android:layout_gravity="center_vertical"
                 android:layout_width="32dp"
                 android:layout_height="32dp"
-                android:src="@mipmap/comf"/>
+                android:src="@mipmap/comf" />
 
             <LinearLayout
                 android:layout_marginStart="64dp"
@@ -36,7 +39,7 @@
                     android:id="@+id/sug_comf"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="舒适指数---"/>
+                    android:text="舒适指数---" />
 
                 <TextView
                     android:textSize="12sp"
@@ -44,7 +47,7 @@
                     android:layout_marginTop="2dp"
                     android:textColor="#969696"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content" />
 
             </LinearLayout>
         </LinearLayout>
@@ -58,7 +61,7 @@
                 android:layout_gravity="center_vertical"
                 android:layout_width="32dp"
                 android:layout_height="32dp"
-                android:src="@mipmap/air"/>
+                android:src="@mipmap/air" />
 
             <LinearLayout
                 android:layout_marginStart="64dp"
@@ -70,7 +73,7 @@
                     android:id="@+id/sug_air"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="空气指数---"/>
+                    android:text="空气指数---" />
 
                 <TextView
                     android:textSize="12sp"
@@ -78,7 +81,7 @@
                     android:layout_marginTop="2dp"
                     android:textColor="#969696"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content" />
 
             </LinearLayout>
 
@@ -93,7 +96,7 @@
                 android:layout_gravity="center_vertical"
                 android:layout_width="32dp"
                 android:layout_height="32dp"
-                android:src="@mipmap/flu"/>
+                android:src="@mipmap/flu" />
 
             <LinearLayout
                 android:layout_marginStart="64dp"
@@ -105,7 +108,7 @@
                     android:id="@+id/sug_flu"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="感冒指数---"/>
+                    android:text="感冒指数---" />
 
                 <TextView
                     android:textSize="12sp"
@@ -113,11 +116,12 @@
                     android:layout_marginTop="2dp"
                     android:textColor="#969696"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content" />
 
             </LinearLayout>
 
         </LinearLayout>
+
         <LinearLayout
             android:layout_marginTop="12dp"
             android:layout_width="match_parent"
@@ -127,7 +131,7 @@
                 android:layout_gravity="center_vertical"
                 android:layout_width="32dp"
                 android:layout_height="32dp"
-                android:src="@mipmap/clothe"/>
+                android:src="@mipmap/clothe" />
 
             <LinearLayout
                 android:layout_marginStart="64dp"
@@ -139,7 +143,7 @@
                     android:id="@+id/sug_drsg"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="穿衣指数---"/>
+                    android:text="穿衣指数---" />
 
                 <TextView
                     android:textSize="12sp"
@@ -147,7 +151,7 @@
                     android:layout_marginTop="2dp"
                     android:textColor="#969696"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content" />
 
             </LinearLayout>
 

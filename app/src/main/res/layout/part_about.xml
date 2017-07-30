@@ -13,8 +13,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        >
+        android:orientation="vertical">
 
         <TextView
             android:layout_width="wrap_content"
@@ -24,7 +23,7 @@
             android:textColor="@color/aboutIcon"
             android:drawableLeft="@mipmap/introduce"
             android:text="@string/introduction"
-            android:textSize="16sp"/>
+            android:textSize="16sp" />
 
         <View
             android:layout_width="match_parent"
@@ -32,20 +31,21 @@
             android:layout_marginBottom="8dp"
             android:layout_marginStart="30dp"
             android:layout_marginTop="4dp"
-            android:background="@color/lineColor"/>
+            android:background="@color/lineColor" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="6dp"
             android:lineSpacingExtra="3dp"
-            android:text="@string/settingContent"
-            />
+            android:text="@string/settingContent" />
+
         <View
             android:layout_width="match_parent"
             android:layout_height="0.3dp"
             android:layout_marginBottom="8dp"
             android:layout_marginTop="12dp"
-            android:background="@color/lineColor"/>
+            android:background="@color/lineColor" />
 
     </LinearLayout>
 
@@ -53,8 +53,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:orientation="vertical"
-        >
+        android:orientation="vertical">
 
         <TextView
             android:layout_width="wrap_content"
@@ -64,21 +63,22 @@
             android:drawableLeft="@mipmap/pen"
             android:text="一切值得"
             android:textColor="@color/aboutIcon"
-            android:textSize="15sp"/>
+            android:textSize="15sp" />
+
         <View
             android:layout_width="match_parent"
             android:layout_height="0.3dp"
             android:layout_marginBottom="8dp"
             android:layout_marginStart="30dp"
             android:layout_marginTop="4dp"
-            android:background="@color/lineColor"/>
+            android:background="@color/lineColor" />
 
         <GridLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:columnCount="2"
-            android:layout_marginBottom="6dp"
-            >
+            android:layout_marginBottom="6dp">
+
             <Button
                 android:id="@+id/btn_code"
                 android:layout_width="wrap_content"
@@ -92,7 +92,7 @@
                 android:textColor="@color/defaultTextColor"
                 tools:targetApi="lollipop"
                 android:paddingEnd="12dp"
-                android:paddingStart="12dp"/>
+                android:paddingStart="12dp" />
 
             <Button
                 android:paddingEnd="12dp"
@@ -107,7 +107,8 @@
                 android:drawableLeft="@mipmap/share"
                 android:text="@string/shared"
                 android:textColor="@color/defaultTextColor"
-                tools:targetApi="lollipop"/>
+                tools:targetApi="lollipop" />
+
             <Button
                 android:paddingEnd="12dp"
                 android:paddingStart="12dp"
@@ -121,7 +122,7 @@
                 android:drawableLeft="@mipmap/bullshit"
                 android:text="@string/bullshit"
                 android:textColor="@color/defaultTextColor"
-                tools:targetApi="lollipop"/>
+                tools:targetApi="lollipop" />
 
             <Button
                 android:paddingEnd="12dp"
@@ -136,14 +137,15 @@
                 android:drawableLeft="@mipmap/friends"
                 android:text="@string/friends"
                 android:textColor="@color/defaultTextColor"
-                tools:targetApi="lollipop"/>
+                tools:targetApi="lollipop" />
         </GridLayout>
+
         <View
             android:layout_width="match_parent"
             android:layout_height="0.3dp"
             android:layout_marginBottom="8dp"
             android:layout_marginTop="12dp"
-            android:background="@color/lineColor"/>
+            android:background="@color/lineColor" />
     </LinearLayout>
 
     <LinearLayout
@@ -161,14 +163,16 @@
             android:gravity="center"
             android:text="感谢前辈"
             android:textColor="@color/aboutIcon"
-            android:textSize="15sp"/>
+            android:textSize="15sp" />
+
         <View
             android:layout_width="match_parent"
             android:layout_height="0.3dp"
             android:layout_marginBottom="8dp"
             android:layout_marginStart="30dp"
             android:layout_marginTop="4dp"
-            android:background="@color/lineColor"/>
+            android:background="@color/lineColor" />
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -178,12 +182,13 @@
             android:text="@string/thanks"
             android:textSize="14sp"
             android:layout_weight="0.70" />
+
         <View
             android:layout_width="match_parent"
             android:layout_height="0.3dp"
             android:layout_marginBottom="8dp"
             android:layout_marginTop="12dp"
-            android:background="@color/lineColor"/>
+            android:background="@color/lineColor" />
 
     </LinearLayout>
 </LinearLayout>

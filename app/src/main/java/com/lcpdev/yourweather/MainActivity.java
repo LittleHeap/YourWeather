@@ -24,6 +24,7 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
+
 import com.amap.api.location.AMapLocation;
 import com.amap.api.location.AMapLocationClient;
 import com.amap.api.location.AMapLocationClientOption;
@@ -50,6 +51,7 @@ import static com.lcpdev.yourweather.model.Common.getCityIdByName;
 
 /**
  * Created by LCP on 2017/1/16.
+ *
  * @ Email:chuge94@163.com
  * GitHub:https://github.com/linchupeng/YourWeather
  */
@@ -58,7 +60,7 @@ public class MainActivity extends BaseActivity {
 
     private FragmentManager manager;
     private Toolbar indexToolBar;
-    public AMapLocationClient mLocationClient=null;
+    public AMapLocationClient mLocationClient = null;
     //声明mLocationOption对象
     public AMapLocationClientOption mLocationOption = null;
     private String weatherId;
@@ -73,60 +75,60 @@ public class MainActivity extends BaseActivity {
         initAMapLocationListener();
         initLocation();
 
-        Log.d("LifeCycle","MainActivity_OnCreate");
+        Log.d("LifeCycle", "MainActivity_OnCreate");
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        Log.d("LifeCycle","MainActivity_OnStart");
+        Log.d("LifeCycle", "MainActivity_OnStart");
 
     }
+
     @Override
     protected void onResume() {
         super.onResume();
 
-        Log.d("LifeCycle","MainActivity_OnResume");
+        Log.d("LifeCycle", "MainActivity_OnResume");
     }
 
 
     @Override
     protected void onRestart() {
         super.onRestart();
-        Log.d("LifeCycle","MainActivity_OnRestart");
+        Log.d("LifeCycle", "MainActivity_OnRestart");
     }
-
 
 
     @Override
     protected void onPause() {
         super.onPause();
-        Log.d("LifeCycle","MainActivity_OnPause");
+        Log.d("LifeCycle", "MainActivity_OnPause");
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        Log.d("LifeCycle","MainActivity_OnStop");
+        Log.d("LifeCycle", "MainActivity_OnStop");
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Log.d("LifeCycle","MainActivity_OnDestroy");
+        Log.d("LifeCycle", "MainActivity_OnDestroy");
     }
 
     /**
      * singleTask启动模式 复写onNewIntent方法 传递数据
-     * 重用了WeatherFragment 
+     * 重用了WeatherFragment
      */
     @Override
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
         setIntent(intent);
         String weatherId = getIntent().getStringExtra("weather_id");
-        if (weatherId!=null){
-            WeatherFragment weatherFrag= new WeatherFragment();
+        if (weatherId != null) {
+            WeatherFragment weatherFrag = new WeatherFragment();
             Bundle bundle = new Bundle();
             bundle.putString("weather_id", weatherId);
             weatherFrag.setArguments(bundle);
@@ -143,8 +145,8 @@ public class MainActivity extends BaseActivity {
         indexToolBar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(indexToolBar);
         getSupportActionBar().setDisplayShowTitleEnabled(true);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,mDrawerLayout,
-                indexToolBar,R.string.drawer_open,R.string.drawer_close);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, mDrawerLayout,
+                indexToolBar, R.string.drawer_open, R.string.drawer_close);
         toggle.syncState();
         mDrawerLayout.addDrawerListener(toggle);
     }
@@ -152,26 +154,26 @@ public class MainActivity extends BaseActivity {
     /**
      * 初始化Navigation参数
      */
-    private void initNavigation(){
-        mDrawerLayout= (DrawerLayout) findViewById(R.id.drawer_layout);
+    private void initNavigation() {
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()){
+                switch (item.getItemId()) {
                     case R.id.add_city:
-                        Intent intentCity = new Intent(MainActivity.this,ChooseCity.class);
+                        Intent intentCity = new Intent(MainActivity.this, ChooseCity.class);
                         startActivity(intentCity);
                         break;
                     case R.id.multi_cities:
                         Toast.makeText(MainActivity.this, "此功能再下个版本添加！", Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.about:
-                        Intent intentAbout =new Intent(MainActivity.this,AboutActivity.class);
+                        Intent intentAbout = new Intent(MainActivity.this, AboutActivity.class);
                         startActivity(intentAbout);
                         break;
                     case R.id.setting:
-                        Intent intentSetting =new Intent(MainActivity.this,SettingActivity.class);
+                        Intent intentSetting = new Intent(MainActivity.this, SettingActivity.class);
                         startActivity(intentSetting);
                         break;
                     case R.id.exit:
@@ -186,10 +188,11 @@ public class MainActivity extends BaseActivity {
      * 获取高德地图定位城市
      */
     private void initAMapLocationListener() {
-        mLocationListener=new AMapLocationListener() {
-            @Override public void onLocationChanged(AMapLocation amapLocation) {
-                if(amapLocation!=null){
-                    if(amapLocation.getErrorCode()==0) {
+        mLocationListener = new AMapLocationListener() {
+            @Override
+            public void onLocationChanged(AMapLocation amapLocation) {
+                if (amapLocation != null) {
+                    if (amapLocation.getErrorCode() == 0) {
                         //定位成功回调信息，设置相关消息
                         amapLocation.getLocationType();//获取当前定位结果来源，如网络定位结果，详见定位类型表
                         amapLocation.getLatitude();//获取纬度
@@ -201,14 +204,14 @@ public class MainActivity extends BaseActivity {
                             Log.i("定位成功", "当前城市为" + cityName);
                             queryWeatherCode(cityName);
 
-                            Toast.makeText(MainActivity.this, "当前城市"+cityName, Toast.LENGTH_SHORT).show();
+                            Toast.makeText(MainActivity.this, "当前城市" + cityName, Toast.LENGTH_SHORT).show();
                         }
 
-                    }else {
+                    } else {
                         //显示错误信息ErrCode是错误码，errInfo是错误信息，详见错误码表。
                         Log.e("aMapError", "ErrCode:" + amapLocation.getErrorCode()
                                 + ", errInfo:" + amapLocation.getErrorInfo());
-                        Log.e("定位失败","");
+                        Log.e("定位失败", "");
                         Toast.makeText(MainActivity.this, "定位失败加载默认城市〒_〒", Toast.LENGTH_SHORT).show();
                         //定位失败加载默认城市
                         String cityName = "厦门";
@@ -228,7 +231,7 @@ public class MainActivity extends BaseActivity {
      * 初始化高德地图定位参数
      */
     private void initLocation() {
-        mLocationClient=new AMapLocationClient(getApplicationContext());
+        mLocationClient = new AMapLocationClient(getApplicationContext());
         mLocationClient.setLocationListener(mLocationListener);
         //初始化定位参数
         mLocationOption = new AMapLocationClientOption();
@@ -267,10 +270,12 @@ public class MainActivity extends BaseActivity {
 //            }
         }
     }
+
     /**
      * 点击返回键两次退出程序
      */
     private long exitTime = 0;
+
     @Override
     public void onBackPressed() {
         if (mDrawerLayout.isDrawerOpen(GravityCompat.START)) {
@@ -279,7 +284,7 @@ public class MainActivity extends BaseActivity {
             if (System.currentTimeMillis() - exitTime > 2000) {
                 Toast.makeText(this, "再按一次退出", Toast.LENGTH_SHORT).show();
                 exitTime = System.currentTimeMillis();
-            }else{
+            } else {
                 finish();
                 System.exit(0);
                 Process.killProcess(Process.myPid());

@@ -13,6 +13,7 @@ import java.util.List;
 
 /**
  * Created by LCP on 2017/1/20.
+ *
  * @ Email:chuge94@163.com
  * GitHub:https://github.com/linchupeng/YourWeather
  */
@@ -20,15 +21,17 @@ import java.util.List;
 public class CityAdapter extends RecyclerView.Adapter<CityAdapter.ViewHolder> {
     private Context mContext;
     private List<String> mDataList;
-    public CityAdapter(List<String> dataList){
-        mDataList=dataList;
+
+    public CityAdapter(List<String> dataList) {
+        mDataList = dataList;
     }
+
     @Override
     public CityAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        if (mContext==null){
-            mContext=parent.getContext();
+        if (mContext == null) {
+            mContext = parent.getContext();
         }
-        View view =LayoutInflater.from(mContext).inflate(R.layout.item_city,parent,false);
+        View view = LayoutInflater.from(mContext).inflate(R.layout.item_city, parent, false);
         return new ViewHolder(view);
     }
 
@@ -39,25 +42,26 @@ public class CityAdapter extends RecyclerView.Adapter<CityAdapter.ViewHolder> {
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder {
-            View weatherView;
-            CardView cardView;
-            TextView itemCity;
-
+        View weatherView;
+        CardView cardView;
+        TextView itemCity;
 
 
         public ViewHolder(View view) {
             super(view);
-            weatherView=view;
-            cardView=(CardView) view;
-            itemCity= (TextView) view.findViewById(R.id.item_city);
+            weatherView = view;
+            cardView = (CardView) view;
+            itemCity = (TextView) view.findViewById(R.id.item_city);
         }
 
 
     }
+
     public interface OnItemClickLitener {
         void onItemClick(View view, int position);
 
     }
+
     private OnItemClickLitener mOnItemClickLitener;
 
     public void setOnItemClickLitener(OnItemClickLitener mOnItemClickLitener) {
@@ -65,23 +69,20 @@ public class CityAdapter extends RecyclerView.Adapter<CityAdapter.ViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(final CityAdapter.ViewHolder holder,final int position) {
+    public void onBindViewHolder(final CityAdapter.ViewHolder holder, final int position) {
         holder.itemCity.setText(mDataList.get(position));
         // 如果设置了回调，则设置点击事件
-        if (mOnItemClickLitener != null)
-        {
-            holder.itemView.setOnClickListener(new View.OnClickListener()
-            {
+        if (mOnItemClickLitener != null) {
+            holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public void onClick(View v)
-                {
+                public void onClick(View v) {
                     int pos = holder.getLayoutPosition();
                     mOnItemClickLitener.onItemClick(holder.itemView, pos);
-                    }
-                });
-            }
+                }
+            });
         }
     }
+}
 
 
 

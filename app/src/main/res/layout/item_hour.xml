@@ -10,54 +10,58 @@
     android:paddingEnd="10dp"
     android:paddingStart="16dp"
     android:paddingTop="16dp">
+
     <ImageView
         android:layout_width="19dp"
         android:layout_height="19dp"
-        android:src="@mipmap/clock"/>
+        android:src="@mipmap/clock" />
+
     <TextView
         android:id="@+id/hour_clock"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:paddingLeft="10dp"
-        tools:text="12:00"
-        />
+        tools:text="12:00" />
+
     <ImageView
         android:layout_width="19dp"
         android:layout_height="19dp"
-        android:src="@mipmap/temp"/>
+        android:src="@mipmap/temp" />
+
     <TextView
         android:id="@+id/hour_temp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:paddingLeft="10dp"
-        tools:text="12°"/>
+        tools:text="12°" />
 
     <ImageView
         android:layout_width="19dp"
         android:layout_height="19dp"
-        android:src="@mipmap/hum"/>
+        android:src="@mipmap/hum" />
+
     <TextView
         android:id="@+id/hour_hum"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:paddingLeft="10dp"
-        tools:text="66%"/>
-
+        tools:text="66%" />
 
 
     <ImageView
         android:layout_width="19dp"
         android:layout_height="19dp"
-        android:src="@mipmap/hourwindy"/>
+        android:src="@mipmap/hourwindy" />
+
     <TextView
         android:id="@+id/hour_wind"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:paddingLeft="10dp"
-        tools:text="10Km"/>
+        tools:text="10Km" />
 
 </LinearLayout>

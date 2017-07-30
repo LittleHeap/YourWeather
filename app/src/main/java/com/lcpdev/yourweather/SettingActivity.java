@@ -33,6 +33,7 @@ import static com.lcpdev.yourweather.R.xml.settingui;
 
 /**
  * Created by LCP on 2017/2/13.
+ *
  * @ Email:chuge94@163.com
  * GitHub:https://github.com/linchupeng/YourWeather
  */
@@ -132,6 +133,7 @@ public class SettingActivity extends PreferenceActivity {
                 }
             });
         }
+
         //由于时间关系该躬耕还未实现 先用Toast替代 嘿嘿
         private void initUpdate() {
             mUpdate = findPreference("update_version");
